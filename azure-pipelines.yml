@@ -2,7 +2,7 @@ trigger:
 - 'main'
 
 variables:
-  buildConfiguration: 'Dev'
+  buildConfiguration: 'Release'
   leaderboardRepository: 'leaderboard'
   webRepository: 'web'
   tag: '$(Build.BuildId)'
@@ -51,8 +51,6 @@ stages:
     pool:
       vmImage: 'ubuntu-20.04'
     environment: 'Dev'
-    variables:
-    - group: Dev
     strategy:
       runOnce:
         deploy:
